@@ -63,8 +63,7 @@ public class MedicionesTemperaturas
     
     public int cantTemperaturasExtremas()
     {
-        int cantidad;
-        cantidad = 0;
+        int cantidad = 0;
         for (Integer temp: registros){
             if (temp > 35 || temp < -15){
                 cantidad +=1;
