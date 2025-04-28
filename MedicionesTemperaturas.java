@@ -39,6 +39,7 @@ public class MedicionesTemperaturas
      * Agrega una temperatura al registro de temperaturas
      */
     public void agregarRegistro(int nuevaTemperatura) {
+        assert (nuevaTemperatura >= -273.15): "Ingrese un valor mayo al 0 absoluto";
         registros.add(new Integer(nuevaTemperatura));
     }
     
@@ -56,4 +57,20 @@ public class MedicionesTemperaturas
         }
     }
     
+    /**
+     * Computa temperaturas extremas
+     */
+    
+    public int cantTemperaturasExtremas()
+    {
+        int cantidad;
+        cantidad = 0;
+        for (Integer temp: registros){
+            if (temp > 35 || temp < -15){
+                cantidad +=1;
+            }
+        }
+        return cantidad; 
+    }
 }
+
